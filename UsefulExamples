@@ -1,0 +1,62 @@
+http://localhost:8080/examples/#webgl_interactive_lines
+http://localhost:8080/examples/#webgl_geometry_text
+http://localhost:8080/examples/#webgl_materials_texture_compressed
+http://localhost:8080/examples/#webgl_materials_blending_custom
+http://localhost:8080/examples/#webgl_materials_texture_filters
+http://localhost:8080/examples/#webgl_materials_texture_tga
+http://localhost:8080/examples/#webgl_materials_variations_basic
+http://localhost:8080/examples/#webgl_materials_video
+http://localhost:8080/examples/#webgl_mirror
+http://localhost:8080/examples/#webgl_mirror_nodes
+// http://localhost:8080/examples/#webgl_modifier_tessellation
+http://localhost:8080/examples/#webgl_multiple_canvases_circle
+// http://localhost:8080/examples/#webgl_multiple_canvases_complex
+// http://localhost:8080/examples/#webgl_multiple_elements
+// http://localhost:8080/examples/#webgl_multiple_elements_text
+http://localhost:8080/examples/#webgl_nearestneighbour
+http://localhost:8080/examples/#webgl_octree_raycasting
+http://localhost:8080/examples/#webgl_performance
+http://localhost:8080/examples/#webgl_physics_convex_break
+http://localhost:8080/examples/#webgl_points_billboards
+http://localhost:8080/examples/#webgl_points_sprites
+http://localhost:8080/examples/#webgl_postprocessing_crossfade
+http://localhost:8080/examples/#webgl_postprocessing_glitch
+http://localhost:8080/examples/#webgl_postprocessing_godrays
+http://localhost:8080/examples/#webgl_postprocessing_masking
+// http://localhost:8080/examples/#webgl_read_float_buffer
+http://localhost:8080/examples/#webgl_sandbox
+http://localhost:8080/examples/#webgl_shader
+http://localhost:8080/examples/#webgl_shader2
+http://localhost:8080/examples/#webgl_shaders_ocean
+// http://localhost:8080/examples/#webgl_shaders_vector
+// http://localhost:8080/examples/#webgl_shadowmap
+http://localhost:8080/examples/#webgl_shadowmap_pointlight
+http://localhost:8080/examples/#webgl_sprites
+http://localhost:8000/examples/#webgl_trails
+http://localhost:8000/examples/#webgl_buffergeometry_constructed_from_geometry
+http://localhost:8000/examples/#webgl_buffergeometry_instancing
+http://localhost:8000/examples/#webgl_buffergeometry_instancing_billboards
+http://localhost:8000/examples/#webgl_buffergeometry_lines
+http://localhost:8000/examples/#webgl_buffergeometry_lines_indexed
+http://localhost:8000/examples/#webgl_buffergeometry_rawshader
+http://localhost:8000/examples/#webgl_buffergeometry_selective_draw
+http://localhost:8000/examples/#webgl_custom_attributes
+// http://localhost:8000/examples/#webgl_custom_attributes_lines
+http://localhost:8000/examples/#webgl_custom_attributes_points
+http://localhost:8000/examples/#webgl_custom_attributes_points3
+http://localhost:8000/examples/#webgl_raymarching_reflect
+http://localhost:8000/examples/#misc_lookat
+http://localhost:8000/examples/#misc_uv_tests
+http://localhost:8000/examples/#canvas_ascii_effect
+http://localhost:8000/examples/#canvas_camera_orthographic
+http://localhost:8000/examples/#canvas_geometry_text
+http://localhost:8000/examples/#canvas_interactive_cubes
+http://localhost:8000/examples/#canvas_lines
+^^// http://localhost:8000/examples/#canvas_lines_colors_2d
+// http://localhost:8000/examples/#canvas_lines_dashed					// cool illusion where the shape of the cube looks insideout
+##// http://localhost:8000/examples/#canvas_lines_sphere
+http://localhost:8000/examples/#misc_controls_pointerlock
+##// http://localhost:8000/examples/#canvas_materials_video
+##// http://localhost:8000/examples/#canvas_particles_floor
+// http://localhost:8000/examples/#misc_controls_fly
+// http://localhost:8000/examples/#svg_sandbox
