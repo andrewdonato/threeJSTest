@@ -42,14 +42,6 @@
 				scene.add(mesh);
 
 
-
-				// geometry1 = new THREE.CubeGeometry(100, 250, 200);
-				// material1 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
-				// mesh1 = new THREE.Mesh(geometry1, material1);
-				// mesh1.position.y = 125;
-				// mesh1.position.X = 125;
-				// scene.add(mesh1);
-				
 				geometry1 = new THREE.CubeGeometry(100, 300, 100);
 				material1 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				mesh1 = new THREE.Mesh(geometry1, material1);
@@ -58,9 +50,28 @@
 			
 				geometry2 = new THREE.CubeGeometry(100, 300, 100);
 				material2 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
-				mesh2 = new THREE.Mesh(geometry1, material1);
+				mesh2 = new THREE.Mesh(geometry2, material2);
 				mesh2.position.y = 150;
 				scene.add(mesh2);
+			
+				geometry3 = new THREE.CubeGeometry(100, 300, 100);
+				material3 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh3 = new THREE.Mesh(geometry3, material3);
+				mesh3.position.y = 150;
+				scene.add(mesh3);
+
+
+				geometry4 = new THREE.CubeGeometry(100, 300, 100);
+				material4 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh4 = new THREE.Mesh(geometry4, material4);
+				mesh4.position.y = 150;
+				scene.add(mesh4);
+			
+				geometry5 = new THREE.CubeGeometry(100, 300, 100);
+				material5 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh5 = new THREE.Mesh(geometry5, material5);
+				mesh5.position.y = 150;
+				scene.add(mesh5);
 			
 				
 
@@ -85,6 +96,9 @@
 				mesh.rotation.x  = Date.now() * 0.0002;	
 				mesh1.rotation.y = Date.now() * 0.0002;	
 				mesh2.rotation.z = Date.now() * 0.0002;
+				mesh3.rotation.x = Date.now() * -0.0002;	
+				mesh4.rotation.y = Date.now() * -0.0002;	
+				mesh5.rotation.z = Date.now() * -0.0002;
 
 				
 				camera.lookAt(mesh.position);  // look at mesh
