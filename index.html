@@ -38,18 +38,21 @@
 				geometry = new THREE.CubeGeometry(100, 300, 100);
 				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				
-				// var mesh = {};
 
+				//// refactoring, #lastsave
+
+				// var mesh = {};
 				// for (var i = 0; i < 5; i++) {
+				// 	var mesh, mesh1,
 				// 	mesh[i] = new THREE.Mesh(geometry, material);
 				// 	mesh[i].position.y = 150;
 				// 	scene.add(mesh[i]);
 				// };
 
+
 				mesh = new THREE.Mesh(geometry, material);
 				mesh.position.y = 150;
 				scene.add(mesh);
-
 
 				mesh1 = new THREE.Mesh(geometry, material);
 				mesh1.position.y = 150;
@@ -62,7 +65,6 @@
 				mesh3 = new THREE.Mesh(geometry, material);
 				mesh3.position.y = 150;
 				scene.add(mesh3);
-
 
 				mesh4 = new THREE.Mesh(geometry, material);
 				mesh4.position.y = 150;
@@ -102,7 +104,7 @@
 				
 				camera.lookAt(mesh.position);  // look at mesh
 				
-				// camera.position.x = Math.sin( Date.now() * 0.002 ) * 150;  // moves left and right
+				camera.position.x = Math.sin( Date.now() * 0.001 ) * 200;  // moves left and right
 
 				renderer.render( scene, camera );
 
