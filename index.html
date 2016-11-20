@@ -21,8 +21,11 @@
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 
+			var meshes=[];
+
 			function setup() {
 
+				
 				var W = window.innerWidth, H = window.innerHeight;
 				renderer = new THREE.WebGLRenderer();
 				renderer.setSize( W, H );
@@ -35,24 +38,26 @@
 				
 				
 				// geometry goes here
-				geometry = new THREE.CubeGeometry(100, 300, 100);
+				geometry = new THREE.CubeGeometry(100, 100, 100);
 				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				
 
 				//// refactoring, #lastsave
 
-				// var mesh = {};
 				// for (var i = 0; i < 5; i++) {
-				// 	var mesh, mesh1,
-				// 	mesh[i] = new THREE.Mesh(geometry, material);
-				// 	mesh[i].position.y = 150;
-				// 	scene.add(mesh[i]);
+				// 	mesh = new THREE.Mesh(geometry, material);
+				// 	mesh.position.y = 150;
+				// 	meshes[i] = mesh
 				// };
 
+				// for (var i = 0; i < meshes.length; i++) {
+				// 	scene.add(meshes[i]);
+				// };
+			
 
-				mesh = new THREE.Mesh(geometry, material);
-				mesh.position.y = 150;
-				scene.add(mesh);
+				mesh0 = new THREE.Mesh(geometry, material);
+				mesh0.position.y = 150;
+				scene.add(mesh0);
 
 				mesh1 = new THREE.Mesh(geometry, material);
 				mesh1.position.y = 150;
@@ -73,6 +78,10 @@
 				mesh5 = new THREE.Mesh(geometry, material);
 				mesh5.position.y = 150;
 				scene.add(mesh5);
+
+				mesh6 = new THREE.Mesh(geometry, material);
+				mesh6.position.y = 150;
+				scene.add(mesh6);
 			
 				
 
@@ -94,7 +103,14 @@
 				
 				// snippets here
 				
-				mesh.rotation.x  = Date.now() * 0.0002;	
+				// mesh.rotation.x  = Date.now() * 0.0002;	
+				// mesh.rotation.y = Date.now() * 0.0002;	
+				// mesh.rotation.z = Date.now() * 0.0002;
+				// mesh.rotation.x = Date.now() * -0.0002;	
+				// mesh.rotation.y = Date.now() * -0.0002;	
+				// mesh.rotation.z = Date.now() * -0.0002;
+				
+				mesh0.rotation.x  = Date.now() * 0.0002;	
 				mesh1.rotation.y = Date.now() * 0.0002;	
 				mesh2.rotation.z = Date.now() * 0.0002;
 				mesh3.rotation.x = Date.now() * -0.0002;	
@@ -102,9 +118,9 @@
 				mesh5.rotation.z = Date.now() * -0.0002;
 
 				
-				camera.lookAt(mesh.position);  // look at mesh
+				camera.lookAt(mesh0.	position);  // look at mesh
 				
-				camera.position.x = Math.sin( Date.now() * 0.001 ) * 200;  // moves left and right
+				camera.position.x = Math.sin( Date.now() * 0.001 ) * 100;  // moves left and right
 
 				renderer.render( scene, camera );
 
