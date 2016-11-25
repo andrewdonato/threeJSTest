@@ -29,12 +29,12 @@
 				document.body.appendChild( renderer.domElement );
 
 				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
-				camera.position.z = 500;
+				camera.position.z = 700;
 
 				scene = new THREE.Scene();
 				
 				
-				
+				//// meshes
 
 				geometry = new THREE.SphereGeometry(150, 100, 100);
 				material = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x1482be});
@@ -78,7 +78,36 @@
 
 				requestAnimationFrame( draw );
 				
-				// experiment with code from the snippets menu here
+				//// animations
+
+				camera.lookAt(mesh.position);
+
+
+				//// different movements
+
+				//// interesting pattern -  moon avoids planet by going around, alternates sides
+				// mesh1.position.x = Math.tan( Date.now() * 0.001 ) * 225;
+				// mesh1.position.y = Math.cos( Date.now() * 0.001 ) * 225;			
+
+				//// interesting pattern -  moon crosses through planet, alternates sides
+				// mesh1.position.x = Math.tan( Date.now() * 0.001 ) * 225;
+				// mesh1.position.y = Math.sin( Date.now() * 0.001 ) * 225;			
+
+				//// counter-clockwise rotation
+				// mesh1.position.x = Math.cos( Date.now() * 0.001 ) * 225;
+				// mesh1.position.y = Math.sin( Date.now() * 0.001 ) * 225;
+				
+
+				//// clockwise rotation
+				// mesh1.position.x = Math.sin( Date.now() * 0.001 ) * 225;
+				// mesh1.position.y = Math.cos( Date.now() * 0.001 ) * 225;
+				
+
+				mesh1.position.x = Math.sin( Date.now() * 0.001 ) * 400;
+				mesh1.position.z = Math.cos( Date.now() * 0.001 ) * 400;
+				
+
+
 
 				renderer.render( scene, camera );
 
