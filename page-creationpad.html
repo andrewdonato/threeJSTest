@@ -21,11 +21,8 @@
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 
-			var meshes=[];
-
 			function setup() {
 
-				
 				var W = window.innerWidth, H = window.innerHeight;
 				renderer = new THREE.WebGLRenderer();
 				renderer.setSize( W, H );
@@ -37,63 +34,43 @@
 				scene = new THREE.Scene();
 				
 				
-				// geometry goes here
-				geometry = new THREE.CubeGeometry(100, 100, 100);
-				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
 				
 
-				//// refactoring, #lastsave
-
-				// for (var i = 0; i < 5; i++) {
-				// 	mesh = new THREE.Mesh(geometry, material);
-				// 	mesh.position.y = 150;
-				// 	meshes[i] = mesh
-				// };
-
-				// for (var i = 0; i < meshes.length; i++) {
-				// 	scene.add(meshes[i]);
-				// };
-			
-
-				mesh0 = new THREE.Mesh(geometry, material);
-				mesh0.position.y = 150;
-				scene.add(mesh0);
-
-				mesh1 = new THREE.Mesh(geometry, material);
-				mesh1.position.y = 150;
+				geometry = new THREE.SphereGeometry(150, 100, 100);
+				material = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x1482be});
+				mesh = new THREE.Mesh(geometry, material);				
+				mesh.position.y = 0;
+				scene.add(mesh);
+				
+				geometry1 = new THREE.SphereGeometry(25, 100, 100);
+				material1 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0xb527be});
+				mesh1 = new THREE.Mesh(geometry1, material1);
+				mesh1.position.y = 0;
+				mesh1.position.x = -250;
 				scene.add(mesh1);
-			
-				mesh2 = new THREE.Mesh(geometry, material);
-				mesh2.position.y = 150;
-				scene.add(mesh2);
-			
-				mesh3 = new THREE.Mesh(geometry, material);
-				mesh3.position.y = 150;
-				scene.add(mesh3);
-
-				mesh4 = new THREE.Mesh(geometry, material);
-				mesh4.position.y = 150;
-				scene.add(mesh4);
-			
-				mesh5 = new THREE.Mesh(geometry, material);
-				mesh5.position.y = 150;
-				scene.add(mesh5);
-
-				// mesh6 = new THREE.Mesh(geometry, material);
-				// mesh6.position.y = 150;
-				// scene.add(mesh6);
-			
 				
+				
+				/*
+				
+				spotLight1 = new THREE.SpotLight( 0xffffff, 5.01 );
+				spotLight1.position.set( 100, 1000, 100 );
+				spotLight1.castShadow = true;
+				spotLight1.shadowDarkness = 0.2;
+				scene.add( spotLight1 );
+				
+				
+				light1 = new THREE.PointLight( 0xff0040, 1, 50 );
+				light1.position.set( 100, 100, 100 );
+				scene.add( light1 );
+				
+				*/
+
+				directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+				directionalLight.position.set( 0, 1, 0 );
+				directionalLight.castShadow = true;
+				scene.add( directionalLight );
 
 				
-				wgeometry = new THREE.PlaneGeometry( 1000, 1000, 100, 100 );
-				wmaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true, wireframeLinewidth: 1 } );
-				wireplane = new THREE.Mesh( wgeometry, wmaterial );
-				wireplane.scale.set( 1, 1, 1 );
-				wireplane.rotation.x = - Math.PI / 2;
-				scene.add( wireplane );
-
-
 
 			}
 
@@ -101,26 +78,7 @@
 
 				requestAnimationFrame( draw );
 				
-				// snippets here
-				
-				// mesh.rotation.x  = Date.now() * 0.0002;	
-				// mesh.rotation.y = Date.now() * 0.0002;	
-				// mesh.rotation.z = Date.now() * 0.0002;
-				// mesh.rotation.x = Date.now() * -0.0002;	
-				// mesh.rotation.y = Date.now() * -0.0002;	
-				// mesh.rotation.z = Date.now() * -0.0002;
-				
-				mesh0.rotation.x  = Date.now() * 0.0002;	
-				mesh1.rotation.y = Date.now() * 0.0002;	
-				mesh2.rotation.z = Date.now() * 0.0002;
-				mesh3.rotation.x = Date.now() * -0.0002;	
-				mesh4.rotation.y = Date.now() * -0.0002;	
-				mesh5.rotation.z = Date.now() * -0.0002;
-
-				
-				camera.lookAt(mesh0.	position);  // look at mesh
-				
-				camera.position.x = Math.sin( Date.now() * 0.001 ) * 100;  // moves left and right
+				// experiment with code from the snippets menu here
 
 				renderer.render( scene, camera );
 
