@@ -42,7 +42,8 @@
 				bg.background = '#000000';
 
 
-				map = THREE.ImageUtils.loadTexture('pics/earth.jpg');
+				// map = THREE.ImageUtils.loadTexture('pics/earth.jpg');
+				map = THREE.ImageUtils.loadTexture('pics/earth_(1).jpg');
 				// map = THREE.ImageUtils.loadTexture('pics/SEPCOMP.gif');
 				geometry = new THREE.SphereGeometry(150, 100, 100);
 				material = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x1482be, map: map});
@@ -90,7 +91,7 @@
 				*/
 
 				directionalLight = new THREE.DirectionalLight(0xffffff, 3);
-				directionalLight.position.set( 10, 0, 7.5 );
+				directionalLight.position.set( 10, 3, 7.5 );
 				directionalLight.castShadow = true;
 				scene.add( directionalLight );
 
