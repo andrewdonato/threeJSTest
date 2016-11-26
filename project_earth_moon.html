@@ -28,9 +28,12 @@
 				renderer.setSize( W, H );
 				document.body.appendChild( renderer.domElement );
 
+
+
+				//// The Viewer
 				camera = new THREE.PerspectiveCamera( 50, W/H, 1, 10000 );
 				camera.position.y = 300;
-				camera.position.z = 1000;
+				camera.position.z = 1500;
 
 				scene = new THREE.Scene();
 				
@@ -42,6 +45,25 @@
 				bg.background = '#000000';
 
 
+
+				//// The Stars
+				geometry0 = new THREE.Geometry();
+				for ( i = 0; i < 5000; i ++ ) {
+					var vertex = new THREE.Vector3();
+					vertex.x = 10000 * Math.random() - 5000;
+					vertex.y = 10000 * Math.random() - 5000;
+					vertex.z = 100 * Math.random() - 1000;
+					geometry0.vertices.push( vertex );
+				}
+				material0 = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: false, transparent: false } );
+				material0.color.setHex( 0xffffff );
+				particles0 = new THREE.ParticleSystem( geometry0, material0 );
+				particles0.sortParticles = true;
+				scene.add( particles0 );
+
+
+
+				//// The Earth
 				// map = THREE.ImageUtils.loadTexture('pics/earth.jpg');
 				map = THREE.ImageUtils.loadTexture('pics/earth_(1).jpg');
 				// map = THREE.ImageUtils.loadTexture('pics/SEPCOMP.gif');
@@ -54,6 +76,7 @@
 				scene.add(mesh);
 
 				
+				//// The Moon				
 				map1 = THREE.ImageUtils.loadTexture('pics/4_moon_global_1k_1.jpg');
 				geometry1 = new THREE.SphereGeometry(25, 100, 100);
 				// material1 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0xb527be, map: map1});
@@ -90,6 +113,8 @@
 				
 				*/
 
+
+				//// The Sun (offstage camera right)
 				directionalLight = new THREE.DirectionalLight(0xffffff, 3);
 				directionalLight.position.set( 10, 3, 7.5 );
 				directionalLight.castShadow = true;
@@ -109,6 +134,20 @@
 				camera.lookAt(mesh.position);
 
 
+				//// Moons revolution around the earth				
+				mesh1.position.x = Math.sin( Date.now() * 0.001 ) * 400;
+				mesh1.position.z = Math.cos( Date.now() * 0.001 ) * 400;
+				
+				// camera.position.x = Math.sin( Date.now() * -0.0001 ) * 1000;
+				// camera.position.z = Math.cos( Date.now() * -0.0001 ) * 1000;
+				
+				//// rotations
+				mesh.rotation.y = Date.now() * 0.0002;	
+				mesh1.rotation.y = Date.now() * 0.0002;	
+
+
+				renderer.render( scene, camera );
+
 				//// different movements
 
 				//// interesting pattern -  moon avoids planet by going around, alternates sides
@@ -127,20 +166,7 @@
 				//// clockwise revolution
 				// mesh1.position.x = Math.sin( Date.now() * 0.001 ) * 225;
 				// mesh1.position.y = Math.cos( Date.now() * 0.001 ) * 225;
-				
-				mesh1.position.x = Math.sin( Date.now() * 0.001 ) * 400;
-				mesh1.position.z = Math.cos( Date.now() * 0.001 ) * 400;
-				
-				// camera.position.x = Math.sin( Date.now() * -0.0001 ) * 1000;
-				// camera.position.z = Math.cos( Date.now() * -0.0001 ) * 1000;
-				
-				//// rotations
-				mesh.rotation.y = Date.now() * 0.0002;	
-				mesh1.rotation.y = Date.now() * 0.0002;	
-
-
-				renderer.render( scene, camera );
-
+			
 			}
 
 			setup();
