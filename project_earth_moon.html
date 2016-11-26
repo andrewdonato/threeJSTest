@@ -55,7 +55,7 @@
 					vertex.z = 100 * Math.random() - 1000;
 					geometry0.vertices.push( vertex );
 				}
-				material0 = new THREE.ParticleBasicMaterial( { size: 2, sizeAttenuation: false, transparent: false } );
+				material0 = new THREE.ParticleBasicMaterial( { size: 1, sizeAttenuation: false, transparent: false } );
 				material0.color.setHex( 0xffffff );
 				particles0 = new THREE.ParticleSystem( geometry0, material0 );
 				particles0.sortParticles = true;
