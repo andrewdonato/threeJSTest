@@ -38,16 +38,34 @@
 				
 				
 				// paste your code from the geometryGUI here
+				geometry0 = new THREE.SphereGeometry(150, 100, 100);
+				material0 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				mesh0 = new THREE.Mesh(geometry0, material0);
+				scene.add(mesh0);
+
 
 				geometry = new THREE.CubeGeometry(200, 200, 200);
 				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+
+				for ( var i = 0; i < geometry.vertices.length; i ++ ) {
+					var vertices = [];
+					for ( var v = 0; v < geometry.vertices.length; v ++ ) {
+						vertices.push( geometry.vertices[ v ].clone() );
+						if ( v === i ) {
+							vertices[ vertices.length - 1 ].x *= 1.2;
+							vertices[ vertices.length - 1 ].y *= 1.2;
+							vertices[ vertices.length - 1 ].z *= 1.2;
+						}
+					}
+					geometry.morphTargets.push( { name: "target" + i, vertices: vertices } );
+				}
+
 				mesh = new THREE.Mesh(geometry, material);
+
+				mesh.material.morphTargets = true;
+
 				scene.add(mesh);
 
-				geometry = new THREE.SphereGeometry(150, 100, 100);
-				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
-				mesh = new THREE.Mesh(geometry, material);
-				scene.add(mesh);
 
 
 
@@ -61,6 +79,15 @@
 				
 				// experiment with code from the snippets menu here
 
+
+				mesh.morphTargetInfluences[ 0 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 1 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 2 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 3 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 4 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 5 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 6 ] = Math.sin( Date.now() * 0.002 );
+				// mesh.morphTargetInfluences[ 7 ] = Math.sin( Date.now() * 0.002 );
 				
 				camera.lookAt(mesh.position);
 
