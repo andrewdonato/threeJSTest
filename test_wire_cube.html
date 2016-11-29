@@ -14,9 +14,6 @@
 		
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/three.min.js"></script>
 		<script src="http://brangerbriz.net/labs/threejs_playGnd/js/Detector.js"></script>
-		<script src="http://threejs.org/examples/fonts/helvetiker_bold.typeface.js"></script>
-		<script src="http://threejs.org/examples/fonts/helvetiker_regular.typeface.js"></script>
-		
 		<script>
 
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
@@ -38,37 +35,37 @@
 				
 				
 				// paste your code from the geometryGUI here
-				geometry0 = new THREE.SphereGeometry(150, 100, 100);
-				material0 = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
-				mesh0 = new THREE.Mesh(geometry0, material0);
-				scene.add(mesh0);
-
+				
+				// geometry = new THREE.SphereGeometry(150, 50, 50);
+				// material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, color: '#cd9c44', wireframe: true, wireframeLinewidth: 1, transparent: true, opacity: 0.82});
 
 				geometry = new THREE.CubeGeometry(200, 200, 200);
-				material = new THREE.MeshNormalMaterial({shading: THREE.FlatShading});
+				material = new THREE.MeshBasicMaterial({shading: THREE.FlatShading, wireframe: true, wireframeLinewidth: 1, color: "#cd9c44"});
+				mesh = new THREE.Mesh(geometry, material);
+				scene.add(mesh);
 
+				/*=>*/
 				for ( var i = 0; i < geometry.vertices.length; i ++ ) {
 					var vertices = [];
 					for ( var v = 0; v < geometry.vertices.length; v ++ ) {
 						vertices.push( geometry.vertices[ v ].clone() );
 						if ( v === i ) {
-							vertices[ vertices.length - 1 ].x *= 1.2;
-							vertices[ vertices.length - 1 ].y *= 1.2;
-							vertices[ vertices.length - 1 ].z *= 1.2;
+							vertices[ vertices.length - 1 ].x *= 2;
+							vertices[ vertices.length - 1 ].y *= 2;
+							vertices[ vertices.length - 1 ].z *= 2;
 						}
 					}
 					geometry.morphTargets.push( { name: "target" + i, vertices: vertices } );
 				}
+				/*<=*/
 
 				mesh = new THREE.Mesh(geometry, material);
 
-				mesh.material.morphTargets = true;
+				/*=>*/
+				mesh.material.morphTargets = true; 
+				/*<=*/
 
 				scene.add(mesh);
-
-
-
-
 
 
 			}
@@ -78,20 +75,25 @@
 				requestAnimationFrame( draw );
 				
 				// experiment with code from the snippets menu here
-
-
-				mesh.morphTargetInfluences[ 0 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 1 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 2 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 3 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 4 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 5 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 6 ] = Math.sin( Date.now() * 0.002 );
-				// mesh.morphTargetInfluences[ 7 ] = Math.sin( Date.now() * 0.002 );
 				
+				/*=>*/
+				for(var v = 0; v < mesh.geometry.vertices.length; v ++ ){
+  					mesh.morphTargetInfluences[ v ] = Math.random() * 0.1;
+				}
+				/*<=*/
+				
+				// mesh.rotation.x = Date.now() * 0.0001;	
+				// mesh.rotation.y = Date.now() * 0.0001;	
+				// mesh.rotation.z = Date.now() * 0.0002;
+
 				camera.lookAt(mesh.position);
+				mesh.position.x = Math.sin( Date.now() * 0.002 ) * 500;
+
+				// camera.rotation.y = Date.now() * 0.0002;	
+
 
 				renderer.render( scene, camera );
+
 
 			}
 
