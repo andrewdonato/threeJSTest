@@ -46,6 +46,14 @@
 				mesh = new THREE.Mesh(geometry, material);
 				scene.add(mesh);
 				
+				
+				
+				geometry1 = new THREE.CylinderGeometry(10, 50, 100, 50, 50, false);
+				material1 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x4681c3});
+				mesh1 = new THREE.Mesh(geometry1, material1);
+				mesh1.position.y = 100;
+				scene.add(mesh1);
+
 
 
 				//// The Sun (offstage camera right)
