@@ -40,20 +40,33 @@
 				bg.background = '#000000';
 
 
-
+				//// cabin
 				geometry = new THREE.CylinderGeometry(50, 50, 100, 50, 50, false);
 				material = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x4681c3});
 				mesh = new THREE.Mesh(geometry, material);
 				scene.add(mesh);
 				
-				
-				
-				geometry1 = new THREE.CylinderGeometry(10, 50, 100, 50, 50, false);
+
+				//// nose
+				geometry1 = new THREE.CylinderGeometry(10, 50, 50, 50, 50, false);
 				material1 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x4681c3});
 				mesh1 = new THREE.Mesh(geometry1, material1);
-				mesh1.position.y = 100;
+				mesh1.position.y = 75;
 				scene.add(mesh1);
 
+				//// thruster
+				geometry2 = new THREE.CylinderGeometry(10, 25, 30, 50, 50, false);
+				material2 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0x4b4e64});
+				mesh2 = new THREE.Mesh(geometry2, material2);
+				mesh2.position.y = -65;
+				scene.add(mesh2);
+
+				//// support frame
+				geometry3 = new THREE.CylinderGeometry(10, 50, 50, 4, 1, true);
+				material3 = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, wireframe: true, wireframeLinewidth: 10, color: 0xdadceb});
+				mesh3 = new THREE.Mesh(geometry3, material3);
+				mesh3.position.y = -75;
+				scene.add(mesh3);
 
 
 				//// The Sun (offstage camera right)
@@ -70,6 +83,13 @@
 				requestAnimationFrame( draw );
 				
 				// experiment with code from the snippets menu here
+
+				// mesh.position.y = Math.sin( Date.now() * 0.002 ) * 450;
+
+
+				camera.lookAt(mesh.position);
+
+				
 
 				renderer.render( scene, camera );
 
