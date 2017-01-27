@@ -1,0 +1,377 @@
+/*
+Luminar's colors
+
+Black: #100F0D;
+Gray: #7C7D7E;
+Red: #C71D2B;
+Green: #51C281;
+Blue: #324EA9;
+
+The light blue I've been using: #F0F8FF;
+
+*/
+
+
+
+/**, *:before, *:after {
+
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+
+  /*-webkit-margin-before: 0px;*/
+  /*-webkit-margin-after: 0px;*/
+
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /*font-size: 100%;*/
+  /*font: inherit;*/
+  vertical-align: baseline;
+}
+
+.cf:after = {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/*.box-model = {
+  width: 200px;
+  height: 200px;
+  border: 200px;
+  padding: 200px;
+}
+*/
+
+body {
+  /*background-image: ../projectluminar/resources/luminar.png;*/
+  /*background-color: #100F0D;  */  /*Luminar's Black*/
+  /*background-color: #FFFFFF;  */  /*White*/
+  /*background-color: #000000;  */  /*Black*/
+  background-color: #F0F8FF;    /*Light blue*/
+  
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+
+
+
+  /*width: 99%;*/
+  /*background: red;*/
+  
+  /*overflow: scroll;*/
+
+}
+
+
+.landingimage {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  transform: translateY(50%);
+  /*top: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+
+
+}
+
+
+
+/*.landingimage {
+  
+}
+*/
+
+.landingimage img {
+
+
+
+
+  /*resize: both;*/
+  /*overflow: auto;*/
+  
+  /*height: 100%;*/
+  /*width: 100%;*/
+
+  /*height: 273px;*/
+  /*width: 1280px;*/
+
+  height: 153px;
+  width: 720px;
+  
+}
+
+
+
+/*.container {
+    width: 418px;
+    height: 240px;
+}*/
+
+
+* {
+  /*border: 1px solid #73AD21;*/
+
+}
+
+.landingcontainer {
+  /*position: fixed;*/
+  /*max-width: 100%;*/
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  
+  /*background-color: red;*/
+  background-color: white;
+}
+
+
+.navigationbarcontainer {
+  
+  margin: 0;
+
+  position: fixed;
+  
+  left: 1.8%;
+  /*left: 23px;*/
+  /*top: 0px;*/
+  z-index: 90;
+  
+  /*background-color: red;*/
+  /*border: 2px solid red;*/
+  background-color: #F0F8FF;
+
+  /*margin-left: 10px;  */
+  /*margin-left: 1%;  */
+
+  /*padding: 0.5%;*/
+  padding: 7px;
+
+  height: 35px;
+  width: 101%;
+  
+  opacity: 100%;
+  
+}
+
+.navigationbarcontainer p {
+    color: #768989;
+}
+
+.navigationmenu {
+  /*display: none;*/
+  display: hidden;
+  
+  /*margin-top: 0.35%;*/
+  margin-top: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  background-color: #7C7D7E;
+  width: 80px;
+}
+
+.container img {
+  /*position: center;*/ /*I think this is wrong*/
+
+
+  height: 100%;
+  width: 100%;
+
+  /*opacity: 0%;*/
+}
+
+.allcontentcontainer {
+  /*max-width: 100%;*/
+  /*background: yellow;*/
+  /*display: block;*/
+  /*background-color: #F0F8FF;*/
+  
+  /*margin: auto;*/
+  /*display: block;*/
+
+
+}
+
+
+
+
+.slogan {
+  /*color: #00ccff;*/
+  text-align: center;
+  /*margin-top: 220px;*/
+  margin-top: 20%;
+  /*font-size: 30px;*/
+}
+
+
+
+.title {
+  font-family: 'Maven Pro';
+  font-size: 3em;
+  margin-bottom: 0;
+  color: #00ccff;
+  /*text-shadow:
+  1px 0px 1px #ccc, 0px 1px 1px #eee,
+  2px 1px 1px #ccc, 1px 2px 1px #eee,
+  3px 2px 1px #ccc, 2px 3px 1px #eee,
+  4px 3px 1px #ccc, 3px 4px 1px #eee,
+  5px 4px 1px #ccc, 4px 5px 1px #eee,
+  6px 5px 1px #ccc, 5px 6px 1px #eee,
+  7px 6px 1px #ccc;*/
+}
+
+
+
+.informationalcontent {
+  /*max-width: 100%;*/
+  /*word-wrap: break-word;*/
+  
+  /*margin: auto;*/
+  /*margin-left: auto;*/
+  /*margin-right: auto;*/
+  
+  position: relative;
+  left: 1.2%;
+
+  width: 100%;
+  /*background-color: green;*/
+  background-color: white;
+
+  /*padding-top: 110px;*/
+  padding-top: 15%;
+  /*padding-bottom: 110px;*/
+  padding-left: 20%;
+  padding-right: 20%; 
+  opacity: 0.85;
+}
+
+
+.footer {
+  /*max-width: 100%;*/
+  /*word-wrap: break-word;*/
+  width: 100%;
+  /*background-color: white;*/
+  padding-top: 110px;
+  /*padding-bottom: 110px;*/
+  /*padding-left: 5%;*/
+  padding-right: 1%;
+  opacity: 0.85;
+  text-align: right;
+}
+
+/*
+.button {
+  position: center;
+  width: 200;
+  height: 200;
+  border: 3px;
+  color: red;
+  background-color: transparent;
+  border-color: transparent;
+  cursor: default;
+}
+*/
+/*
+a .aboutusbutton :hover {
+  text-shadow: true;
+}
+*/
+
+.textdisplaybox {
+  /*For construction purposes*/
+/*
+  border: 3px;
+  border-color: red;
+  border-style: solid;
+*/
+  /*position: absolute;*/
+  position: fixed;
+  z-index:  98;
+  /*left: 100px;*/
+  /*width: 700px;*/
+  width: 96%;
+  height: 50%;
+  margin-left: auto;
+  margin-right: auto;
+
+  padding: 0.5%;
+  /*margin: auto;*/
+
+  text-align: center;
+/*  top: 0;
+  right: 0;
+  width: 200;
+*/
+}
+
+.textdisplaybox p {
+
+  width: 65%;
+  height: 75%;
+  margin-left: auto;
+  margin-right: auto;
+/*
+  border-color: orange;
+  border-style: solid;
+  border-width: 1px;
+*/
+  font-size: 12; /* font-size doesn't change when argument changes */
+
+  color: #A9A9A9; /* winner so far */
+  /*color: #FFFAF0;*/
+  /*color: #D3D3D3;*/
+  /*color: #C0C0C0;*/
+  /*color:  #696969;*/ /*second place*/
+  /*color: #708090;*/
+  /*color: #778899;*/
+}
+
+/*
+#red {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 50px;
+  height: 150px;
+  filter: brightness(1%);
+}
+*/
