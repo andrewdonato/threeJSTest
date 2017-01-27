@@ -89,6 +89,8 @@
 
 				camera.lookAt(mesh.position);
 
+				camera.position.x = Math.sin( Date.now() * 0.001 ) * 400;
+				camera.position.z = Math.cos( Date.now() * 0.001 ) * 400;
 				
 
 				renderer.render( scene, camera );
